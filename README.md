@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CodeWithPurpose India
 
-## Getting Started
+CodeWithPurpose India community
 
-First, run the development server:
+
+## ✨ Overview
+
+CodeWithPurpose India is a community-focused initiative, and this repository contains the website source for the project. The app is currently built using:
+
+- Next.js 16.3.4
+- React 19.2.8
+- TypeScript 5
+- Tailwind CSS 4
+- ESLint 9
+
+
+## 🧰 Prerequisites
+
+Make sure you have the following installed locally:
+
+- Node.js 24 LTS
+- npm
+- Git
+
+## 📦 Getting Started
+
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run check
+```
+Dev server starts on: PORT 3000
+
+```text
+http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Available Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev       # Start the development server
+npm run build     # Create a production build
+npm run start     # Run the production build locally
+npm run lint      # Run ESLint checks
+npm run typecheck # Run TypeScript type checks
+npm run check     # Run lint, typecheck, and build before pushing
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## ⭐ Maintainers
 
-To learn more about Next.js, take a look at the following resources:
+This project is maintained by the CodeWithPurpose India community. If you are working on a feature or bug fix, keep the codebase consistent, readable, and well-documented.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
