@@ -6,7 +6,7 @@ import { CwpLogo, GitHubIcon, InstagramIcon, XIcon } from "@/components/icons";
 import { LINKS } from "@/lib/links";
 
 const NAV_LINKS = [
-  { href: LINKS.courses, label: "Courses" },
+  { href: LINKS.workshops, label: "Workshops" },
   { href: LINKS.contact, label: "Contact" },
   { href: LINKS.faq, label: "FAQ" },
   { href: LINKS.about, label: "About Us" },

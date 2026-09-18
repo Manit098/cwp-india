@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageShell } from "@/components/PageShell";
 import { PageHero } from "@/components/PageHero";
+import { ContactForm } from "@/components/ContactForm";
 import { LINKS } from "@/lib/links";
 import { CONTACT_REASONS } from "@/lib/data";
 
@@ -9,12 +10,6 @@ export const metadata: Metadata = {
   description:
     "Get in touch with CodeWithPurpose India. Start a chapter, host a workshop, or just say hello.",
 };
-
-const inputClass =
-  "w-full rounded-lg border border-[var(--home-hairline-strong)] bg-[var(--home-white)] px-3.5 py-2.5 text-sm text-[var(--home-ink)] placeholder:text-[var(--home-ink-quiet)] focus:border-[var(--home-fern)] focus:outline-none focus:ring-2 focus:ring-[var(--home-fern)]/30";
-
-const labelClass =
-  "mb-1.5 block text-sm font-medium text-[var(--home-ink-soft)]";
 
 export default function ContactPage() {
   return (
@@ -68,7 +63,7 @@ export default function ContactPage() {
                     href={LINKS.email}
                     className="text-[var(--home-link-green)] underline underline-offset-2"
                   >
-                    hello@codewithpurpose.org
+                    team@codewithpurpose.org
                   </a>
                 </p>
                 <p>
@@ -87,64 +82,7 @@ export default function ContactPage() {
           </div>
 
           <div className="home-card home-card-accent rounded-2xl p-8 md:p-10">
-            <form className="space-y-5">
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="block">
-                  <span className={labelClass}>Name</span>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    className={inputClass}
-                    placeholder="Your name"
-                  />
-                </label>
-                <label className="block">
-                  <span className={labelClass}>Email</span>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    className={inputClass}
-                    placeholder="you@example.com"
-                  />
-                </label>
-              </div>
-              <label className="block">
-                <span className={labelClass}>City / State</span>
-                <input
-                  type="text"
-                  name="location"
-                  className={inputClass}
-                  placeholder="e.g. Bengaluru, Karnataka"
-                />
-              </label>
-              <label className="block">
-                <span className={labelClass}>Reason</span>
-                <select name="reason" className={inputClass}>
-                  {CONTACT_REASONS.map((r) => (
-                    <option key={r}>{r}</option>
-                  ))}
-                </select>
-              </label>
-              <label className="block">
-                <span className={labelClass}>Message</span>
-                <textarea
-                  name="message"
-                  rows={5}
-                  required
-                  className={`${inputClass} resize-none`}
-                  placeholder="Tell us what you have in mind..."
-                />
-              </label>
-              <button
-                type="submit"
-                className="home-btn home-btn-fill w-full sm:w-auto"
-              >
-                Send Message
-                <span className="home-arrow">→</span>
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </section>

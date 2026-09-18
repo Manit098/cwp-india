@@ -11,22 +11,30 @@ const HERO_STATS = [
 /* Three copies so the home-marquee keyframe (−33.333%) loops seamlessly. */
 const MARQUEE_STATS = [...HERO_STATS, ...HERO_STATS, ...HERO_STATS];
 
-export function HeroSection() {
+export function HeroSection({
+  title,
+  description,
+}: {
+  title?: string;
+  description?: string;
+}) {
   return (
     /* overflow-x-clip: the stats marquee track is wider than the viewport by
        design; clip here so a transform never widens the page on phones. */
     <section className="overflow-x-clip pt-8 md:pt-[3.69rem]">
       <div className="mx-auto w-full max-w-[85rem] px-5 md:px-10">
         <h1 className="home-display text-center text-[2rem] leading-[1.05] tracking-[-0.02em] md:text-[2.75rem] lg:text-[3.5rem] xl:text-[4rem]">
-          India has no shortage of talent.{" "}
-          <br className="hidden sm:block" />
-          Just of on-ramps.
+          {title ?? (
+            <>
+              India has no shortage of talent.{" "}
+              <br className="hidden sm:block" />
+              Just of on-ramps.
+            </>
+          )}
         </h1>
         <p className="mx-auto mt-5 max-w-[44rem] text-center text-base text-[var(--home-ink-soft)] sm:text-lg">
-          CWP India is the India chapter of CodeWithPurpose — students running
-          free coding workshops, hackathons, and school chapters across the
-          country. Taught by students, open to every student, priced at
-          nothing.
+          {description ??
+            "CWP India is the India chapter of CodeWithPurpose — students running free coding workshops, hackathons, and school chapters across the country. Taught by students, open to every student, priced at nothing."}
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
           <a href={LINKS.courses} className="home-btn home-btn-fill">

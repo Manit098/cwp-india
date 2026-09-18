@@ -10,6 +10,7 @@ export const LINKS = {
   about: "/about",
   contact: "/contact",
   faq: "/faq",
+  workshops: "/workshops",
   index: "/",
 
   instagram: "https://www.instagram.com/codewpurpose/",
@@ -17,7 +18,7 @@ export const LINKS = {
   github: "https://github.com/codewpurpose/cwp-india",
 
   discord: "https://discord.gg/8xqYFPD5fk",
-  email: "mailto:hello@codewithpurpose.org",
+  email: "mailto:team@codewithpurpose.org",
 
   python: "https://www.udemy.com/course/introduction-to-python-bootcamp/",
   vibecoding: "https://www.udemy.com/course/vibecoding-101/",
