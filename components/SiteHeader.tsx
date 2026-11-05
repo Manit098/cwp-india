@@ -12,16 +12,6 @@ const NAV_LINKS = [
   { href: LINKS.about, label: "About Us" },
 ];
 
-const PROOF_POINTS = [
-  "Free forever",
-  "2,000+ students",
-  "14+ states & UTs",
-  "50+ workshops",
-  "150+ countries via CWP global",
-  "Recognised by the U.S. House",
-  "Student-run",
-];
-
 const GLASS_STYLE = {
   background:
     "linear-gradient(rgba(206,206,206,0.3),rgba(206,206,206,0.3)), rgba(255,255,255,0.85)",
@@ -42,20 +32,9 @@ function LogoLink() {
 
 /**
  * The strip above the header: who to follow, what we have done, and one way in.
- * The rotating claim is intentionally not a live region — it is supporting
- * visual proof, not time-sensitive information that should interrupt readers.
+ * One stable claim rather than a rotating one — no timer, no re-render.
  */
 function ProofPointStrip() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = window.setInterval(
-      () => setIndex((current) => (current + 1) % PROOF_POINTS.length),
-      2800
-    );
-    return () => window.clearInterval(timer);
-  }, []);
-
   return (
     <div className="proof-point-strip">
       <div className="proof-point-inner">
@@ -91,9 +70,7 @@ function ProofPointStrip() {
         </div>
         <p className="proof-point-centre">
           <span aria-hidden="true">✦</span>
-          <span key={PROOF_POINTS[index]} className="proof-point-text">
-            {PROOF_POINTS[index]}
-          </span>
+          <span className="proof-point-text">2,000+ students</span>
           <span aria-hidden="true">✦</span>
         </p>
         <div className="proof-point-side proof-point-side-end">
@@ -150,7 +127,7 @@ export function SiteHeader() {
         Skip to main content
       </a>
       <header className="sticky top-0 z-10">
-        <div className="mx-auto flex w-full max-w-[85rem] items-center justify-between gap-3 px-4 py-3 sm:px-5 md:px-10 min-[1200px]:grid min-[1200px]:grid-cols-[1fr_auto_1fr] min-[1200px]:gap-4 min-[1200px]:py-8">
+        <div className="mx-auto flex w-full max-w-[85rem] items-center justify-between gap-3 px-4 py-4 sm:px-5 md:px-10 min-[1200px]:grid min-[1200px]:grid-cols-[1fr_auto_1fr] min-[1200px]:gap-4 min-[1200px]:py-8">
           <div className="min-w-0 min-[1200px]:justify-self-start">
             <LogoLink />
           </div>

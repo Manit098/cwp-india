@@ -45,7 +45,7 @@ export function SiteFooter() {
     <footer id="contact" className="scroll-mt-24 pb-6">
       <div className="mx-auto w-full max-w-[85rem] px-5 md:px-10">
         <div className="rounded-xl bg-white p-5 shadow-[0_0_7.5rem_rgba(0,0,0,0.07)] md:p-6">
-          <div className="grid items-end gap-y-10 lg:[grid-template-columns:repeat(20,minmax(0,1fr))]">
+          <div className="grid items-start gap-y-10 lg:[grid-template-columns:repeat(20,minmax(0,1fr))]">
             <div className="self-start lg:col-span-8">
               <Link
                 href={LINKS.index}
@@ -92,7 +92,7 @@ export function SiteFooter() {
               </div>
             </div>
           </div>
-          <div className="mt-12 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+          <div className="mt-12 flex flex-wrap items-end justify-between gap-6">
             <div className="text-xs opacity-70">
               <span>© 2026 CodeWithPurpose India</span>
               <p className="mt-1">

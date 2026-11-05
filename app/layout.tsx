@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Archivo, Fraunces, Spline_Sans_Mono } from "next/font/google";
+import { Archivo, Fraunces, Fredoka, Spline_Sans_Mono } from "next/font/google";
 import "./globals.css";
+import "./cartoon-home.css";
 
 const SITE_NAME = "CodeWithPurpose India";
 const SITE_TITLE = "CodeWithPurpose India — Free Coding Education for Students in India";
@@ -23,6 +24,13 @@ const homeMono = Spline_Sans_Mono({
   variable: "--font-home-mono",
   subsets: ["latin"],
   weight: ["400", "500"],
+});
+
+const playfulHeading = Fredoka({
+  variable: "--font-playful-heading",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -65,9 +73,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={`home-root ${homeSans.variable} ${homeSerif.variable} ${homeMono.variable} min-h-full`}
+        className={`home-root ${homeSans.variable} ${homeSerif.variable} ${homeMono.variable} ${playfulHeading.variable} min-h-full`}
       >
-        {children}
+        <div className="cartoon-home">{children}</div>
       </body>
     </html>
   );

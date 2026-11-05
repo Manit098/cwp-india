@@ -1,20 +1,130 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-input: var(--input);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
   --font-sans: var(--font-home-sans);
   --font-mono: var(--font-home-mono);
   --font-heading: var(--font-home-serif);
 }
 
 :root {
-  --background: #fcf4e8;
-  --foreground: #15120c;
-  --border: rgba(30, 60, 44, 0.1);
-  --ring: #3e7f5c;
+  --background: oklch(0.968 0.014 79);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(0.99 0.008 79);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(0.99 0.008 79);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.94 0.02 79);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.94 0.02 79);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.91 0.025 79);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
 }
 
 /* ===== CodeWithPurpose India home styles ===== */
@@ -22,6 +132,8 @@
   overflow-x: hidden;
   --home-page: #fcf4e8;
   --home-white: #fffbf5;
+  /* Warm near-black. The old #0a0e19 was blue-black, which fights a cream page
+   * — the classic tell of a palette assembled from two different systems. */
   --home-ink: #15120c;
   --home-ink-hover: #2b2419;
   --home-grey-400: #f5ebdb;
@@ -33,34 +145,78 @@
   --home-grey-900: #1f1f1f;
   --home-moss: #1e3c2c;
   --home-moss-hover: #2a5038;
-  --home-pistachio: #dbefdb;
-  --home-link-green: #397554;
-  --home-fern: #3e7f5c;
+  /* Radix Grass 4 / 11 — the global site imports these from
+   * @radix-ui/colors/grass.css; inlined here so the palette matches without
+   * the dependency. */
+  --home-pistachio: #daf1db;
+  --home-link-green: #2a7e3b;
+  --home-fern: var(--home-link-green);
+  /* Udemy's brand purple and its hover, used as-is. Reserved for enrolment —
+   * the one action that hands the reader to another site. */
   --home-violet: #a435f0;
   --home-violet-hover: #8710d8;
   --home-border: 0.5px solid var(--home-grey-500);
 
-  --home-sage: #6d9b7f;
-  --home-moss-deep: #162c20;
-  --home-ink-soft: #4f483d;
-  --home-ink-quiet: #6b6255;
+  /* --- tonal range ----------------------------------------------------- */
+  --home-sage: #6d9b7f; /* mid green — dividers, quiet marks */
+  --home-moss-deep: #162c20; /* below moss, for weight */
+  /* Body and caption ink, both warm so they sit on cream rather than over it. */
+  --home-ink-soft: #4f483d; /* body copy — ~7.7:1 on the page */
+  --home-ink-quiet: #6b6255; /* captions and labels — ~5.2:1 */
   --home-hairline: rgba(30, 60, 44, 0.1);
   --home-hairline-strong: rgba(30, 60, 44, 0.18);
 
+  /* Use the same warm light palette for Tailwind/shadcn controls on every
+     route, not only the marketing homepage. */
+  --background: var(--home-page);
+  --foreground: var(--home-ink);
+  --card: var(--home-white);
+  --card-foreground: var(--home-ink);
+  --popover: var(--home-white);
+  --popover-foreground: var(--home-ink);
+  --primary: var(--home-moss);
+  --primary-foreground: #fffbf5;
+  --secondary: var(--home-grey-400);
+  --secondary-foreground: var(--home-ink);
+  --muted: var(--home-grey-400);
+  --muted-foreground: var(--home-ink-soft);
+  --accent: var(--home-pistachio);
+  --accent-foreground: var(--home-moss-deep);
+  --border: var(--home-grey-500);
+  --input: var(--home-grey-500);
+  --ring: var(--home-fern);
+  --sidebar: var(--home-white);
+  --sidebar-foreground: var(--home-ink);
+  --sidebar-primary: var(--home-moss);
+  --sidebar-primary-foreground: #fffbf5;
+  --sidebar-accent: var(--home-grey-400);
+  --sidebar-accent-foreground: var(--home-ink);
+  --sidebar-border: var(--home-grey-500);
+  --sidebar-ring: var(--home-fern);
+
+  /* Warm-tinted rather than neutral black: a grey shadow on cream reads dirty. */
   --home-shadow-sm: 0 1px 2px rgba(46, 38, 24, 0.05);
   --home-shadow-md: 0 2px 4px rgba(46, 38, 24, 0.05), 0 8px 20px rgba(46, 38, 24, 0.06);
   --home-shadow-lg: 0 4px 8px rgba(46, 38, 24, 0.05), 0 18px 44px rgba(46, 38, 24, 0.09);
 
+  /* --- section rhythm --------------------------------------------------
+   * One value, applied by .home-flow. */
   --home-space-section: 4rem;
   --home-space-section-lg: 8rem;
 
   font-family: var(--font-home-sans), system-ui, sans-serif;
   background: var(--home-page);
   color: var(--home-ink);
+  /* Archivo runs slightly wider than Inter at the same size, so the old
+   * -0.02em tracking closes it up too far. */
   letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
 }
 
+/* Fraunces carries optical-size, SOFT and WONK axes. The defaults here are the
+ * section-heading voice: sober, barely wonky. .home-display below opens all
+ * three up for headline sizes, so one family covers both without a second
+ * webfont. */
 .home-serif {
   font-family: var(--font-home-serif), Georgia, serif;
   font-weight: 480;
@@ -68,7 +224,8 @@
   font-optical-sizing: auto;
   font-variation-settings: "SOFT" 14, "WONK" 0;
 }
-
+/* Headline voice: lighter, softer, and slightly wonky. Only for h1-scale type —
+ * WONK's angled terminals turn to mush below about 2rem. */
 .home-display {
   font-family: var(--font-home-serif), Georgia, serif;
   font-weight: 400;
@@ -76,12 +233,112 @@
   font-optical-sizing: auto;
   font-variation-settings: "SOFT" 50, "WONK" 1;
 }
-
+.proof-point-strip {
+  background: #1e3c2c;
+  color: #dbefdb;
+  font-family: "Comic Sans MS", "Bradley Hand", cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+}
+/* Three columns rather than a centred flex row, so the claim stays optically
+   centred no matter how wide the socials or the join link get. */
+.proof-point-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 2.35rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 85rem;
+  padding: 0.3rem 1.25rem;
+}
+@media (min-width: 768px) {
+  .proof-point-inner { padding: 0.3rem 2.5rem; }
+}
+.proof-point-side {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+}
+.proof-point-side-end { justify-content: flex-end; }
+.proof-point-label {
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+/* The box is the tap target, the svg inside it is the glyph. */
+.proof-point-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  flex: none;
+  color: currentColor;
+  opacity: 0.8;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.proof-point-icon svg {
+  height: 1rem;
+  width: 1rem;
+}
+.proof-point-icon:hover { opacity: 1; transform: translateY(-1px); }
+.proof-point-centre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  white-space: nowrap;
+}
+.proof-point-join {
+  /* relative + ::after is the tap-target expansion; the bar has a fixed height,
+     so padding here would grow the bar rather than the target. */
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(219, 239, 219, 0.35);
+  padding-bottom: 0.05rem;
+  transition: border-color 0.2s;
+}
+.proof-point-join::after {
+  content: "";
+  position: absolute;
+  inset: -0.45rem -0.3rem;
+}
+.proof-point-join:hover { border-bottom-color: #dbefdb; }
+.proof-point-strip a:focus-visible {
+  outline: 2px solid #dbefdb;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+.proof-point-text { animation: proof-point-in 0.45s ease both; }
+@keyframes proof-point-in { from { opacity: 0; transform: translateY(0.35rem) rotate(-1deg); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .proof-point-text { animation: none; }
+}
+@media (max-width: 640px) {
+  .proof-point-strip { font-size: 0.8rem; }
+  .proof-point-inner { gap: 0.5rem; padding: 0.3rem 0.9rem; }
+  .proof-point-label { display: none; }
+  .proof-point-centre { gap: 0.45rem; }
+  .proof-point-side { gap: 0.1rem; }
+  .proof-point-icon { width: 1.9rem; }
+  .proof-point-icon svg { height: 0.9rem; width: 0.9rem; }
+}
+@media (max-width: 519px) {
+  .proof-point-side:not(.proof-point-side-end) { display: none; }
+}
+@media (max-width: 359px) {
+  .proof-point-side-end { display: none; }
+}
 .home-mono {
   font-family: var(--font-home-mono), ui-monospace, monospace;
 }
 
-/* Brand lockup */
+/* --- brand lockup ------------------------------------------------------ */
 .cwp-logo {
   --cwp-logo-h: 28px;
 }
@@ -97,6 +354,8 @@
   letter-spacing: -0.02em;
   white-space: nowrap;
 }
+/* Footer display size. It steps down on phones so the lockup never sets the
+ * footer card's minimum width. */
 .cwp-logo-lg {
   --cwp-logo-h: 30px;
 }
@@ -116,14 +375,16 @@
   }
 }
 
+/* Below the desktop nav breakpoint the header carries the logo, Donate and the
+ * menu toggle on one line. */
 @media (max-width: 639px) {
   .home-btn-compact {
     padding-left: 0.8rem;
     padding-right: 0.8rem;
   }
 }
-
-/* Section rhythm */
+/* Section rhythm. One gap here, with two modifiers for the pairs that belong
+ * closer together. */
 .home-flow {
   display: flex;
   flex-direction: column;
@@ -137,7 +398,8 @@
   .home-flow > .home-flow-close { margin-top: calc(-0.5 * var(--home-space-section-lg)); }
 }
 
-/* Cards */
+/* A hairline plus a warm shadow, rather than a full-saturation fern outline.
+ * Cards that need to be picked out take .home-card-accent. */
 .home-card {
   background: var(--home-white);
   border: 1px solid var(--home-hairline);
@@ -147,11 +409,12 @@
   border-color: rgba(62, 127, 92, 0.4);
   box-shadow: var(--home-shadow-md);
 }
-
 .home-root a:not(.home-btn):not(.home-arrow-link) { text-decoration-color: var(--home-fern); }
 .home-root section, .home-root footer > div > div { border-color: var(--home-hairline); }
+.home-root .bg-white { background-color: var(--home-white); }
 
-/* Buttons */
+/* Buttons: proper padding, a weight that separates the label from body copy,
+   and a size step below body text so a button reads as a control. */
 .home-btn {
   display: inline-flex;
   min-height: 2.75rem;
@@ -191,6 +454,7 @@
   border-color: var(--home-ink-hover);
   box-shadow: var(--home-shadow-md);
 }
+/* A hairline on the card surface rather than a hard ink outline. */
 .home-btn-outline {
   background: var(--home-white);
   border-color: var(--home-hairline-strong);
@@ -211,8 +475,32 @@
   background: linear-gradient(rgba(224, 212, 196, 0.5), rgba(224, 212, 196, 0.5)),
     rgba(255, 251, 245, 0.85);
 }
-
-
+/* Enrolment buttons, sitewide. Same weight as .home-btn-fill. */
+.home-btn-violet {
+  background: var(--home-violet);
+  border-color: var(--home-violet);
+  color: #fff;
+  box-shadow: var(--home-shadow-sm);
+}
+.home-btn-violet:hover {
+  background: var(--home-violet-hover);
+  border-color: var(--home-violet-hover);
+  box-shadow: var(--home-shadow-md);
+}
+/* The global ring is fern, which reads as an unrelated accent on a violet
+ * button. */
+.home-btn-violet:focus-visible {
+  outline-color: var(--home-violet);
+}
+.home-btn-moss {
+  background: var(--home-moss);
+  border-color: var(--home-moss);
+  color: #fff;
+}
+.home-btn-moss:hover {
+  background: var(--home-moss-hover);
+  border-color: var(--home-moss-hover);
+}
 .home-arrow-link {
   display: inline-flex;
   align-items: center;
@@ -228,7 +516,6 @@
 .home-arrow-link:hover .home-arrow {
   transform: translateX(2px);
 }
-
 .home-nav-pill:has(a:hover, button:hover) > :not(:hover) {
   opacity: 0.4;
 }
@@ -236,7 +523,7 @@
   transition: opacity 0.2s;
 }
 
-/* Hit target expansion */
+/* Grows a small control's tap target without touching layout. */
 .home-hit-expand {
   position: relative;
 }
@@ -245,8 +532,6 @@
   position: absolute;
   inset: -0.4rem -0.3rem;
 }
-
-/* Footer link hover */
 .home-footer-link {
   position: relative;
   display: inline-block;
@@ -263,12 +548,11 @@
 .home-footer-link:hover::before {
   opacity: 0.08;
 }
-
-/* Card lift effect */
 .home-lift {
   transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), background 0.3s,
     box-shadow 0.3s, border-color 0.3s;
 }
+/* Lift and deepen the shadow rather than washing the surface beige. */
 .home-lift:hover {
   transform: translateY(-3px);
   box-shadow: var(--home-shadow-lg);
@@ -277,7 +561,23 @@
 @media (prefers-reduced-motion: reduce) {
   .home-lift:hover { transform: none; }
 }
-
+.home-row-arrow {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s, transform 0.2s ease-out;
+}
+.home-template-row:hover .home-row-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* Touch devices have no hover — keep the affordance visible so accordion rows
+ * still read as expandable. */
+@media (hover: none) {
+  .home-row-arrow {
+    opacity: 1;
+    transform: none;
+  }
+}
 .home-chip {
   transition: border-color 0.25s, background 0.25s;
 }
@@ -290,7 +590,14 @@
   height: 5px;
   border-radius: 9999px;
   background: var(--home-fern);
-  animation: home-chip-pulse 3.2s ease-out infinite;
+  animation: none;
+}
+.home-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: var(--home-fern);
+  animation: none;
 }
 @keyframes home-chip-pulse {
   0% {
@@ -303,47 +610,43 @@
     box-shadow: 0 0 0 0 rgba(62, 127, 92, 0);
   }
 }
-
-.home-marquee {
-  overflow: hidden;
-  mask: linear-gradient(90deg, transparent, #000 12% 88%, transparent);
+/* Decorative animation loops were removed from the global theme: the marks sit
+   still and only react to deliberate input. */
+.home-flow-dash {
+  stroke-dasharray: 3 5;
+  animation: none;
 }
-@media (max-width: 639px) {
-  .home-marquee {
-    mask: linear-gradient(90deg, transparent, #000 6% 94%, transparent);
+.home-blink {
+  animation: none;
+}
+@keyframes home-blink {
+  50% {
+    opacity: 0;
   }
 }
-.home-marquee-track {
-  display: flex;
-  gap: 0.625rem;
-  width: max-content;
-  animation: home-marquee 48s linear infinite;
+.cwp-cycle {
+  opacity: 1;
 }
-.home-marquee:hover .home-marquee-track {
-  animation-play-state: paused;
-}
-.home-hero-stats .home-marquee-track {
-  gap: 0.75rem;
-  animation-duration: 36s;
-}
-@media (min-width: 768px) {
-  .home-hero-stats .home-marquee-track {
-    gap: 1rem;
-    animation-duration: 42s;
-  }
-}
-@keyframes home-marquee {
-  0% {
-    transform: translateX(0);
-  }
+@keyframes cwp-cycle {
+  0%,
+  5% {
+    opacity: 0;
+    transform: translateY(4px);
+  },
+  11%,
+  86% {
+    opacity: 1;
+    transform: translateY(0);
+  },
+  94%,
   to {
-    transform: translateX(-33.3333%);
+    opacity: 0;
+    transform: translateY(4px);
   }
 }
-
-.home-blink { animation: home-blink 1.1s steps(1) infinite; }
-@keyframes home-blink { 50% { opacity: 0; } }
-
+.cwp-pulse {
+  animation: none;
+}
 .cwp-hero-bg {
   background-image: radial-gradient(40rem 22rem at 88% -10%, rgba(219, 239, 219, 0.6), transparent 70%),
     radial-gradient(32rem 18rem at -5% 110%, rgba(219, 239, 219, 0.45), transparent 70%),
@@ -352,359 +655,21 @@
   mask: linear-gradient(180deg, #000 60%, transparent);
   pointer-events: none;
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .home-chip-dot,
-  .home-marquee-track {
-    animation: none;
-  }
-}
-
-/* =====================================================================
- * Proof-point strip — the dark bar above the header.
- * ===================================================================== */
-.proof-point-strip {
-  background: var(--home-moss-deep);
-  color: var(--home-pistachio);
-  font-family: var(--font-home-sans), system-ui, sans-serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.01em;
-}
-.proof-point-inner {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 0.75rem;
-  min-height: 2.35rem;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 85rem;
-  padding: 0.3rem 1.25rem;
-}
-@media (min-width: 768px) {
-  .proof-point-inner { padding: 0.3rem 2.5rem; }
-}
-.proof-point-side {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  min-width: 0;
-}
-.proof-point-side-end { justify-content: flex-end; }
-.proof-point-label {
-  font-size: 0.8rem;
-  opacity: 0.75;
-}
-.proof-point-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 2rem;
-  width: 2rem;
-  flex: none;
-  color: currentColor;
-  opacity: 0.8;
-  transition: opacity 0.2s, transform 0.2s;
-}
-.proof-point-icon svg {
-  height: 1rem;
-  width: 1rem;
-}
-.proof-point-icon:hover { opacity: 1; transform: translateY(-1px); }
-.proof-point-centre {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.7rem;
-  white-space: nowrap;
-}
-.proof-point-text {
-  font-size: 0.82rem;
-  opacity: 0.9;
-  animation: 0.45s both proof-point-in;
-}
-@keyframes proof-point-in {
-  0% { opacity: 0; transform: translateY(0.35rem) rotate(-1deg); }
-  to { opacity: 1; transform: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .proof-point-text { animation: none; }
-}
-.proof-point-join {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  white-space: nowrap;
-  border-bottom: 1px solid rgba(219, 239, 219, 0.35);
-  padding-bottom: 0.05rem;
-  transition: border-color 0.2s;
-}
-.proof-point-join::after {
-  content: "";
-  position: absolute;
-  inset: -0.45rem -0.3rem;
-}
-.proof-point-join:hover { border-bottom-color: var(--home-pistachio); }
-.proof-point-strip a:focus-visible {
-  outline-offset: 3px;
-  border-radius: 3px;
-  outline: 2px solid var(--home-pistachio);
-}
-@media (max-width: 640px) {
-  .proof-point-strip { font-size: 0.8rem; }
-  .proof-point-inner { gap: 0.5rem; padding: 0.3rem 0.9rem; }
-  .proof-point-label { display: none; }
-  .proof-point-centre { gap: 0.45rem; }
-  .proof-point-side { gap: 0.1rem; }
-  .proof-point-icon { width: 1.9rem; }
-  .proof-point-icon svg { height: 0.9rem; width: 0.9rem; }
-  .proof-point-text { font-size: 0.75rem; }
-}
-@media (max-width: 519px) {
-  .proof-point-side:not(.proof-point-side-end) { display: none; }
-}
-@media (max-width: 420px) {
-  .proof-point-centre { display: none; }
-}
-@media (max-width: 359px) {
-  .proof-point-side-end { display: none; }
-}
-
-/* =====================================================================
- * Scroll reveal.
- * ===================================================================== */
-.reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1),
-    transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
-  transition-delay: var(--reveal-delay, 0ms);
-}
-.reveal-in {
-  opacity: 1;
-  transform: none;
-}
-.reveal-scale {
-  opacity: 0;
-  transform: scale(0.94) translateY(16px);
-  transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1),
-    transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
-  transition-delay: var(--reveal-delay, 0ms);
-}
-.reveal-in.reveal-scale {
-  opacity: 1;
-  transform: none;
-}
-@media (prefers-reduced-motion: reduce) {
-  .reveal, .reveal-scale { opacity: 1; transform: none; transition: none; }
-}
-@media (scripting: none) {
-  .reveal, .reveal-scale { opacity: 1 !important; transform: none !important; transition: none !important; }
-}
-
-/* =====================================================================
- * Hero atmosphere
- * ===================================================================== */
-.home-orb {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(60px);
-  pointer-events: none;
-  animation: home-orb-drift 14s ease-in-out infinite;
-}
-.home-orb-1 { background: rgba(219, 239, 219, 0.7); }
-.home-orb-2 { background: rgba(240, 219, 190, 0.6); animation-delay: -5s; }
-@keyframes home-orb-drift {
-  0%, to { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(18px, -22px) scale(1.08); }
-}
-
-.home-float {
-  animation: home-float 5.5s ease-in-out infinite;
-}
-@keyframes home-float {
-  0%, to { transform: translateY(0) rotate(var(--float-rot, 0deg)); }
-  50% { transform: translateY(-9px) rotate(var(--float-rot, 0deg)); }
-}
-
-/* Squiggle underline */
-.home-squiggle {
-  stroke-dasharray: 320;
-  stroke-dashoffset: 320;
-  animation: home-draw 1.4s 0.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
-}
-@keyframes home-draw { to { stroke-dashoffset: 0; } }
-@media (prefers-reduced-motion: reduce) { .home-squiggle { animation: none; stroke-dashoffset: 0; } }
-
-/* Tilt chips */
-.home-tilt-l { transform: rotate(-1.4deg); }
-.home-tilt-r { transform: rotate(1.4deg); }
-.home-tilt-l:hover, .home-tilt-r:hover { transform: rotate(0deg) translateY(-2px); }
-.home-tilt-l, .home-tilt-r { transition: transform 0.25s ease; }
-
-
-/* Gradient text */
-.grad-text {
-  background: linear-gradient(100deg, var(--home-moss) 0%, var(--home-fern) 45%, #b7a06b 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Section eyebrow */
-.home-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-home-mono), ui-monospace, monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--home-ink-quiet);
-}
-.home-eyebrow::before {
-  content: "";
-  width: 1.6rem;
-  height: 1px;
-  background: var(--home-fern);
-  opacity: 0.5;
-}
-
-.overflow-wrap-anywhere { overflow-wrap: anywhere; }
-
-/* Selection */
-.home-root ::selection {
-  background: var(--home-pistachio);
-  color: var(--home-moss);
-}
-
-/* Base layer */
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-  html {
-    @apply font-sans;
-  }
-}
-
-/* =====================================================================
- * Ported from codewithpurpose.org: landing-page section machinery
- * ===================================================================== */
-
-.home-btn-moss {
-  background: var(--home-moss);
-  border-color: var(--home-moss);
-  color: #fff;
-}
-.home-btn-moss:hover {
-  background: var(--home-moss-hover);
-  border-color: var(--home-moss-hover);
-}
-
-/* Global-reach accordion rows */
-.home-row-arrow {
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: opacity 0.2s, transform 0.2s ease-out;
-}
-.home-template-row:hover .home-row-arrow {
-  opacity: 1;
-  transform: translateX(0);
-}
-/* Touch devices have no hover — keep the affordance visible. */
-@media (hover: none) {
-  .home-row-arrow {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.home-marquee-reverse .home-marquee-track {
-  animation-direction: reverse;
-}
-.home-marquee:hover .home-marquee-track {
-  animation-play-state: paused;
-}
-
-/* Dotted field behind the stacked marquee rows */
-.home-marquee-stack {
-  position: relative;
-}
-.home-marquee-stack::before {
-  content: "";
-  position: absolute;
-  inset: -1.75rem 0;
-  background-image: radial-gradient(var(--home-grey-600) 1px, transparent 1px);
-  background-size: 22px 22px;
-  opacity: 0.4;
-  mask: linear-gradient(90deg, transparent, #000 18% 82%, transparent),
-    linear-gradient(180deg, transparent, #000 30% 70%, transparent);
-  mask-composite: intersect;
-  pointer-events: none;
-}
-.home-marquee-stack > * {
-  position: relative;
-}
-
-.home-live-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 9999px;
-  background: var(--home-fern);
-  animation: home-chip-pulse 2s ease-out infinite;
-}
-
-/* Animated dashes inside the line-art SVGs */
-.home-flow-dash {
-  stroke-dasharray: 3 5;
-  animation: home-flow 1.4s linear infinite;
-}
-@keyframes home-flow {
-  to {
-    stroke-dashoffset: -8;
-  }
-}
-
-/* Fade-cycle for the miniature UI mockups in the story cards */
-.cwp-cycle {
-  opacity: 0;
-  animation: cwp-cycle 9s ease-in-out infinite;
-}
-@keyframes cwp-cycle {
-  0%,
-  5% {
-    opacity: 0;
-    transform: translateY(4px);
-  }
-  11%,
-  86% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  94%,
-  to {
-    opacity: 0;
-    transform: translateY(4px);
-  }
-}
-.cwp-pulse {
-  animation: home-chip-pulse 2.6s ease-out infinite;
-}
 .cwp-spin {
-  animation: cwp-spin 20s linear infinite;
+  animation: none;
 }
 @keyframes cwp-spin {
   to {
     transform: rotate(1turn);
   }
 }
+@keyframes home-flow {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
 .home-orbit {
-  animation: home-orbit 30s linear infinite;
+  animation: none;
   transform-origin: 100px 100px;
 }
 @keyframes home-orbit {
@@ -713,7 +678,7 @@
   }
 }
 
-/* Expanding detail panel for the global-reach accordion */
+/* Expanding detail panel for the accordion rows. */
 .home-detail {
   overflow: hidden;
   max-height: 0;
@@ -750,7 +715,6 @@
     padding-left: 12px;
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .cwp-pulse,
   .cwp-spin,
@@ -759,4 +723,28 @@
   .home-orbit {
     animation: none;
   }
+}
+
+/* Section eyebrow — the mono label above a section heading. */
+.home-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-home-mono), ui-monospace, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--home-ink-quiet);
+}
+.home-eyebrow::before {
+  content: "";
+  width: 1.6rem;
+  height: 1px;
+  background: var(--home-fern);
+  opacity: 0.5;
+}
+
+.home-root ::selection {
+  background: var(--home-pistachio);
+  color: var(--home-moss);
 }
