@@ -63,6 +63,13 @@ export const metadata: Metadata = {
     description:
       "Together in Learning, Stronger in Purpose. Free coding courses for students across India.",
   },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/seo/favicon-32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/seo/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({
